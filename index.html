@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <p class="tagline">MY DAILY PLANNER</p>
+            <h1>My Task Manager</h1>
+            <p class="subtitle">A little progress every day adds up.</p>
+        </header>
+
+        <section class="add-section">
+            <h2>Add a new task</h2>
+
+            <form id="taskForm">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What needs to be done?"
+                    maxlength="200"
+                    autocomplete="off"
+                >
+                <button type="submit" id="addButton">+ Add Task</button>
+            </form>
+
+            <p id="errorMessage" role="alert"></p>
+        </section>
+
+        <section class="summary">
+            <div class="summary-card pending-card">
+                <span class="summary-icon">○</span>
+                <div>
+                    <p>Pending Tasks</p>
+                    <h2 id="pendingCount">0</h2>
+                </div>
+            </div>
+
+            <div class="summary-card completed-card">
+                <span class="summary-icon">✓</span>
+                <div>
+                    <p>Completed Tasks</p>
+                    <h2 id="completedCount">0</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="tasks-section">
+            <div class="list-heading">
+                <h2>My Tasks</h2>
+                <span id="totalCount">0 tasks</span>
+            </div>
+
+            <div class="filters">
+                <button type="button" class="filter-btn active" data-filter="all">
+                    All
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="pending">
+                    Pending
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="completed">
+                    Completed
+                </button>
+            </div>
+
+            <ul id="taskList"></ul>
+
+            <div id="emptyMessage" class="empty-message">
+                <div class="empty-icon">＋</div>
+                <h3>No tasks yet</h3>
+                <p>Add your first task above and get started!</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>One task at a time. You've got this!</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
